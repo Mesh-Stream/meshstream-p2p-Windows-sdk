@@ -14,14 +14,16 @@ The current release is **1.0.0**.
 | Platform | Windows 10 / 11 x64 |
 | Public API | C / C++ through `meshstream.h` |
 | Runtime | Microsoft Visual C++ 2015-2022 Redistributable (x64) |
-| Distribution | GitHub Releases |
+| Distribution | Versioned archive in this repository |
 
 Windows ARM64 and x86 are not part of the current published release. Do not
 ship the x64 SDK runtime on those architectures.
 
 ## Package contents
 
-The versioned release archive contains:
+The versioned release archive is committed at
+[`releases/MeshStream-Windows-SDK-1.0.0-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.0-win-x64.zip)
+and contains:
 
 ```text
 include/meshstream.h

@@ -1,8 +1,11 @@
 {
   "name": "MeshStream Windows SDK",
   "version": "1.0.0",
-  "distribution": "GitHub Releases",
+  "distribution": "versioned archive in this repository",
   "archiveName": "MeshStream-Windows-SDK-1.0.0-win-x64.zip",
+  "archivePath": "releases/MeshStream-Windows-SDK-1.0.0-win-x64.zip",
+  "archiveSha256": "f566e4286bb980a225e5149c42085ec45a232d907c371a6d501e73e87c3fedea",
+  "archiveSizeBytes": 2049083,
   "platform": "windows",
   "architecture": "x64",
   "minimumVersion": "Windows 10",
