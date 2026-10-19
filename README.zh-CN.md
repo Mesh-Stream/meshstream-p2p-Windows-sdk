@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+[发布维护契约](RELEASE_CONTRACT.md)
+
 MeshStream Windows SDK 通过 C/C++ 接口提供与 CDN 兼容的桌面播放地址，并在可用时
 启用 P2P 分发。应用继续负责播放器选择、解码、渲染和播放生命周期。
 
