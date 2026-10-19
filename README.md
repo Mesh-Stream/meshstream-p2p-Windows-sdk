@@ -1,5 +1,13 @@
 # MeshStream Windows SDK
 
+## MeshStream SDKs
+
+- [Online Demo](https://demo.meshstream.net/) for a live Web playback and P2P delivery view.
+- [Web Demo](https://github.com/Mesh-Stream/meshstream-p2p-web-sdk) using the published npm SDK.
+- [Android SDK](https://github.com/Mesh-Stream/meshstream-p2p-android-sdk) for Media3 / ExoPlayer apps.
+- [Apple SDK](https://github.com/Mesh-Stream/meshstream-p2p-ios-sdk) for iOS and macOS apps.
+- [Windows SDK](https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk) for C/C++ desktop apps.
+
 MeshStream Windows SDK provides a CDN-compatible playback URL for desktop
 players. It adds P2P delivery opportunistically while preserving media
 continuity. Applications continue to own player selection, rendering, and
