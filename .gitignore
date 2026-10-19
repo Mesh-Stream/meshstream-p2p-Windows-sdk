@@ -1,0 +1,17 @@
+.vs/
+.idea/
+out/
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+*.dll
+*.lib
+*.exp
+*.pdb
+*.exe
+*.zip
