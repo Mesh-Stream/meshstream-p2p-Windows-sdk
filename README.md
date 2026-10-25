@@ -17,7 +17,7 @@ playback lifecycle.
 
 ## Release
 
-The current release is **1.0.0**.
+The current release is **1.0.4**.
 
 | Item | Value |
 | --- | --- |
@@ -32,7 +32,7 @@ ship the x64 SDK runtime on those architectures.
 ## Package contents
 
 The versioned release archive is committed at
-[`releases/MeshStream-Windows-SDK-1.0.0-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.0-win-x64.zip)
+[`releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip)
 and contains:
 
 ```text
@@ -54,6 +54,7 @@ for each media item and pass its URL to the player:
 
 meshstream_config_t config{};
 meshstream_config_default(&config);
+const char* sdk_version = meshstream_get_sdk_version();
 config.key = "your_sdk_key";
 
 meshstream_client_t* client = nullptr;

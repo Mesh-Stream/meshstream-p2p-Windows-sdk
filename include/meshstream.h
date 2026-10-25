@@ -108,7 +108,8 @@ typedef struct meshstream_diagnostics_t {
   uint64_t ice_duration_ms;
 } meshstream_diagnostics_t;
 
-MESHSTREAM_API const char* meshstream_version(void);
+/* Returns the version of the native MeshStream engine loaded by this process. */
+MESHSTREAM_API const char* meshstream_get_sdk_version(void);
 MESHSTREAM_API const char* meshstream_result_message(int32_t code);
 MESHSTREAM_API int32_t meshstream_config_default(meshstream_config_t* out_config);
 /* Creates a local client without bootstrap, Tracker, ICE, or token I/O.

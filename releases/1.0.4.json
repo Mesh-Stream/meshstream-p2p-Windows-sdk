@@ -1,0 +1,19 @@
+{
+  "name": "MeshStream Windows SDK",
+  "version": "1.0.4",
+  "distribution": "versioned archive in this repository",
+  "archiveName": "MeshStream-Windows-SDK-1.0.4-win-x64.zip",
+  "archivePath": "releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip",
+  "archiveSha256": "a9b0ee941af580eedcce7511c46b7ce9144cc0703799be23639cb7ff5723acbe",
+  "archiveSizeBytes": 2005457,
+  "platform": "windows",
+  "architecture": "x64",
+  "minimumVersion": "Windows 10",
+  "files": [
+    {"path": "include/meshstream.h", "sha256": "cc7ac9369054d81e8227e615fd7cba1a1f6d19089be5687a6ac7f9a08b752854"},
+    {"path": "lib/p2pcdn_core.dll", "sha256": "65d2765421543fb66b2e97181a7c748c65a9ed6df901cc370e8ce3d33402b903"},
+    {"path": "lib/p2pcdn_core.dll.lib", "sha256": "1e2d6a46e98608c9b6aa76927d4d8f0a51ae149171d790db9dc44d9773fe819a"}
+  ],
+  "runtime": "Microsoft Visual C++ 2015-2022 Redistributable (x64)",
+  "builtAt": "2026-10-25"
+}

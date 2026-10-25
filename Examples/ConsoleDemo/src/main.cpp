@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    std::cout << "SDK version: " << meshstream_version() << "\\n";
+    std::cout << "SDK version: " << meshstream_get_sdk_version() << "\\n";
     std::cout << "Playback URL: " << playback_url << "\\n";
     std::cout << "Pass this URL to your media player. Press Enter to stop.\\n";
     meshstream_string_free(playback_url);
