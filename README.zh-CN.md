@@ -15,11 +15,11 @@ MeshStream Windows SDK 通过 C/C++ 接口提供与 CDN 兼容的桌面播放地
 
 ## 当前发布
 
-当前版本为 `1.0.4`，支持 Windows 10/11 x64，使用 C/C++ 公共头文件
+当前版本为 `1.0.7`，支持 Windows 10/11 x64，使用 C/C++ 公共头文件
 `meshstream.h`。请安装 Microsoft Visual C++ 2015-2022 Redistributable（x64）。
 
 仓库内的版本包位于：
-[`releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip)
+[`releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip)
 
 包内包含：
 

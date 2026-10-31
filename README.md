@@ -17,7 +17,7 @@ playback lifecycle.
 
 ## Release
 
-The current release is **1.0.4**.
+The current release is **1.0.7**.
 
 | Item | Value |
 | --- | --- |
@@ -32,7 +32,7 @@ ship the x64 SDK runtime on those architectures.
 ## Package contents
 
 The versioned release archive is committed at
-[`releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip)
+[`releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip)
 and contains:
 
 ```text
