@@ -4,6 +4,17 @@
 
 MeshStream Windows SDK provides a C / C++ API for P2P video and audio delivery in Windows 10 / 11 x64 desktop apps. It proxies HLS, MPEG-DASH and eligible HTTP Range MP4/MP3 requests through a local playback URL, with HTTP/CDN fallback for your existing media player.
 
+## How it works
+
+Create a session from your media URL, then give its `playbackUrl` to your existing player:
+
+```text
+App → SDK playback session → Local playback URL → Player
+                              └─ SDK fetches from peers or origin/CDN
+```
+
+Your player handles decoding, rendering and playback controls. The SDK handles media delivery, caching and P2P scheduling. Configuration and P2P preparation run in the background; playback need not wait for a peer connection. Stop using the old playback URL before closing its session when leaving the page or switching content.
+
 ## Features
 
 - HLS, MPEG-DASH and HTTP Range MP4/MP3 delivery with origin/CDN fallback.
@@ -11,7 +22,13 @@ MeshStream Windows SDK provides a C / C++ API for P2P video and audio delivery i
 - Session preload, peer and traffic statistics, status and diagnostics.
 - Versioned x64 DLL distribution and a standalone CMake console example.
 
-Media decoding and format support depend on your chosen player and platform. P2P availability depends on network conditions and peers with matching content.
+## Before you start
+
+- Create an application and a platform-specific SDK Key in the [MeshStream console](https://console.meshstream.net/). If application identity validation is enabled, register your actual application identity.
+- Have a playable HLS `.m3u8`, DASH `.mpd`, or HTTP Range-capable MP4 / MP3 URL. Prefer HTTPS.
+- Choose a player that supports your source format. The SDK adds delivery capabilities, not codecs.
+
+To try it first, jump to [Run the demo](#run-the-demo). The online demo linked above is a Web experience; run this repository's example for this platform.
 
 ## Release
 
@@ -44,7 +61,7 @@ place `p2pcdn_core.dll` next to the application executable.
 
 ## Basic integration
 
-Create one client for the application scope, then create a playback session
+Inside your playback owner, create one client for the application scope, then create a playback session
 for each media item and pass its URL to the player:
 
 ```cpp
@@ -92,6 +109,20 @@ signal to replace the session URL or stop the player.
 Destroy each session when its player item ends, then destroy the client when
 the owning application scope finishes.
 
+## Run the demo
+
+Use Visual Studio 2022 with C++ desktop tools and CMake 3.21+. Run in PowerShell, replacing `C:/SDKs/...` with the actual extracted SDK root:
+
+```powershell
+git clone https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk.git
+cd meshstream-p2p-Windows-sdk/Examples/ConsoleDemo
+cmake -S . -B out -DMESHSTREAM_SDK_ROOT="C:/SDKs/MeshStream-Windows-SDK-1.0.10-win-x64"
+cmake --build out --config Release
+.\out\Release\MeshStreamConsoleDemo.exe "your_sdk_key" "https://cdn.example.com/master.m3u8" "stable-content-id"
+```
+
+The console prints a local playback URL. **Keep the console running** and open that URL in a compatible player on the same computer. Pressing Enter closes the session and invalidates the URL. This C ABI example does not render video or include a statistics panel; read `meshstream_session_get_stats` in your app.
+
 ## Supported media paths
 
 The SDK can proxy HLS, DASH, and eligible byte-range MP4/MP3 requests. It does
@@ -114,21 +145,17 @@ Use `meshstream_session_get_stats` for traffic and peer statistics,
 `meshstream_session_get_diagnostics` for troubleshooting. These values describe
 acceleration state only and must not be used to stop player playback.
 
-## Example
+## Verify P2P delivery
 
-[`Examples/ConsoleDemo`](Examples/ConsoleDemo) is a standalone CMake project.
-It locates the SDK through `MESHSTREAM_SDK_ROOT`, copies the runtime DLL after
-build, and prints the playback URL for your chosen player.
+1. Play the same content in two devices or independently running instances, each with a valid Key. Use the same rendition and nearby playback positions. For rotating signed URLs, use the same stable content ID for the same content, and different IDs for different content.
+2. Watch peers and traffic in the demo. A nonzero peer count means a connection exists; **increasing P2P download or upload bytes** confirms media sharing. For the Windows console example, read the statistics API in your application.
+3. Close the other instance and check that HTTP/CDN playback continues. Also check seeking, switching content and cleanup when leaving playback.
 
-## Release verification
+HTTP/CDN delivery is normal with one viewer or no shareable segments. Discovery and sharing also depend on account configuration, network connectivity and the content cached by both viewers.
 
-Expected files and SHA-256 digests are recorded under [`releases/`](releases).
-Verify the downloaded archive before distributing it with an application.
+## More examples and support
 
-## Support
-
-For Windows ABI, distribution, licensing, or integration questions, contact
-support@meshstream.net.
+See [advanced usage](https://meshstream.net/docs/sdk/windows-advanced/) for preload, live/VOD scheduling, player feedback, multiple sessions and diagnostics. See [CHANGELOG](CHANGELOG.md) for updates. Contact support@meshstream.net with the SDK version, OS, player and redacted logs.
 
 ## Other MeshStream SDKs
 
