@@ -3,6 +3,12 @@
 All notable changes to the public MeshStream Windows SDK distribution are
 documented in this file.
 
+## 1.0.10 - 2026-11-09
+
+- Updates the Windows x64 native runtime to MeshStream SDK 1.0.10.
+- Rebuilds and verifies the versioned DLL and import library; keeps the existing C ABI and Windows 10 minimum.
+- Validates the independent ConsoleDemo against the extracted release archive.
+
 ## 1.0.7 - 2026-11-01
 
 - Updates the Windows native runtime to the shared MeshStream SDK 1.0.7 release.

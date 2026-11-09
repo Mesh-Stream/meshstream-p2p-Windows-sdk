@@ -15,11 +15,11 @@ MeshStream Windows SDK 通过 C/C++ 接口提供与 CDN 兼容的桌面播放地
 
 ## 当前发布
 
-当前版本为 `1.0.7`，支持 Windows 10/11 x64，使用 C/C++ 公共头文件
+当前版本为 `1.0.10`，支持 Windows 10/11 x64，使用 C/C++ 公共头文件
 `meshstream.h`。请安装 Microsoft Visual C++ 2015-2022 Redistributable（x64）。
 
 仓库内的版本包位于：
-[`releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip)
+[`releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip)
 
 包内包含：
 
@@ -40,19 +40,34 @@ lib/p2pcdn_core.dll.lib
 meshstream_config_t config{};
 meshstream_config_default(&config);
 config.key = "your_sdk_key";
+const char* origin_url = "https://cdn.example.com/video/master.m3u8";
 
 meshstream_client_t* client = nullptr;
-meshstream_client_create(&config, &client);
+int rc = meshstream_client_create(&config, &client);
+if (rc != MESHSTREAM_OK) {
+    // 记录 meshstream_result_message(rc)；业务可自行决定是否直接播放原始地址。
+    return;
+}
 
 meshstream_session_t* session = nullptr;
 char* playback_url = nullptr;
-meshstream_client_create_playback_session(
+rc = meshstream_client_create_playback_session(
     client, origin_url, nullptr, &session, &playback_url);
+if (rc != MESHSTREAM_OK) {
+    meshstream_client_destroy(client);
+    return;
+}
+
+// 在 session 有效期间将 playback_url 复制给播放器使用。
+meshstream_string_free(playback_url);
+
+// 播放器不再使用该会话地址时：
+meshstream_session_destroy(session);
+meshstream_client_destroy(client);
 ```
 
-SDK 在后台完成服务配置与 P2P 准备。加速暂不可用时，媒体仍应通过源站/CDN 继续
-请求，业务播放器不应因为 P2P 状态而停止。播放结束后销毁会话；应用不再使用 SDK
-时销毁客户端。
+SDK 在后台完成服务配置与 P2P 准备。P2P 是否可用只影响加速状态；播放器不应因此替换
+会话地址或停止播放。播放结束后销毁会话；应用不再使用 SDK 时销毁客户端。
 
 ## 示例与支持
 

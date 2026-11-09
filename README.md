@@ -17,7 +17,7 @@ playback lifecycle.
 
 ## Release
 
-The current release is **1.0.7**.
+The current release is **1.0.10**.
 
 | Item | Value |
 | --- | --- |
@@ -32,7 +32,7 @@ ship the x64 SDK runtime on those architectures.
 ## Package contents
 
 The versioned release archive is committed at
-[`releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip)
+[`releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip)
 and contains:
 
 ```text
@@ -54,11 +54,16 @@ for each media item and pass its URL to the player:
 
 meshstream_config_t config{};
 meshstream_config_default(&config);
-const char* sdk_version = meshstream_get_sdk_version();
 config.key = "your_sdk_key";
+const char* origin_url = "https://cdn.example.com/video/master.m3u8";
 
 meshstream_client_t* client = nullptr;
-meshstream_client_create(&config, &client);
+int rc = meshstream_client_create(&config, &client);
+if (rc != MESHSTREAM_OK) {
+    // Record meshstream_result_message(rc). The application may explicitly
+    // choose a direct origin fallback for this local setup failure.
+    return;
+}
 
 meshstream_playback_options_t options{};
 options.struct_size = sizeof(options);
@@ -67,16 +72,24 @@ options.content_id = "stable-asset-id";
 
 meshstream_session_t* session = nullptr;
 char* playback_url = nullptr;
-if (meshstream_client_create_playback_session(
-        client, origin_url, &options, &session, &playback_url) == MESHSTREAM_OK) {
-    // Give playback_url to VLC, libVLC, mpv, or your own player.
-    meshstream_string_free(playback_url);
+rc = meshstream_client_create_playback_session(
+    client, origin_url, &options, &session, &playback_url);
+if (rc != MESHSTREAM_OK) {
+    meshstream_client_destroy(client);
+    return;
 }
+
+// Copy playback_url into the player while the session remains alive.
+meshstream_string_free(playback_url);
+
+// When the player no longer uses the session URL:
+meshstream_session_destroy(session);
+meshstream_client_destroy(client);
 ```
 
 The returned URL is ready promptly. Configuration and P2P preparation continue
-in the background. When acceleration is unavailable, media delivery continues
-through the configured origin/CDN path.
+in the background. P2P availability affects acceleration only; it is not a
+signal to replace the session URL or stop the player.
 
 Destroy each session when its player item ends, then destroy the client when
 the owning application scope finishes.

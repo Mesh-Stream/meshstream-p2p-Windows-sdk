@@ -7,7 +7,7 @@ your own Windows player.
 Build it with Visual Studio 2022 or recent Visual C++ Build Tools:
 
 ```powershell
-cmake -S . -B out -DMESHSTREAM_SDK_ROOT="C:/SDKs/MeshStream-Windows-SDK-1.0.7-win-x64"
+cmake -S . -B out -DMESHSTREAM_SDK_ROOT="C:/SDKs/MeshStream-Windows-SDK-1.0.10-win-x64"
 cmake --build out --config Release
 ```
 
