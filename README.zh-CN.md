@@ -1,6 +1,6 @@
 # MeshStream P2P Windows SDK
 
-[English](README.md) · [官网](https://meshstream.net/zh/) · [接入文档](https://meshstream.net/zh/docs/sdk/windows-setup/) · [SDK 下载](releases/) · [在线 Demo](https://demo.meshstream.net/)
+[English](README.md) · [官网](https://meshstream.net/zh/) · [接入文档](https://meshstream.net/zh/docs/sdk/windows-setup/) · [SDK 下载](releases/downloads.json) · [在线 Demo](https://demo.meshstream.net/)
 
 MeshStream Windows SDK 面向 Windows 10 / 11 x64 桌面应用，通过 C / C++ API 提供 P2P 视频与音频分发。它通过本地播放地址代理 HLS、MPEG-DASH 及符合 HTTP Range 要求的 MP4/MP3 请求，支持现有播放器接入和 HTTP/CDN 回退。
 
@@ -37,7 +37,7 @@ MeshStream Windows SDK 面向 Windows 10 / 11 x64 桌面应用，通过 C / C++ 
 
 ## 安装
 
-下载并解压 [`MeshStream-Windows-SDK-1.0.10-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip)，包内包含：
+从 [GitHub Release 下载 MeshStream-Windows-SDK-1.0.10-win-x64.zip](https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.10/MeshStream-Windows-SDK-1.0.10-win-x64.zip) 并解压，包内包含：
 
 ```text
 include/meshstream.h

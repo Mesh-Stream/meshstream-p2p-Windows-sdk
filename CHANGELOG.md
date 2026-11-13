@@ -3,6 +3,12 @@
 All notable changes to the public MeshStream Windows SDK distribution are
 documented in this file.
 
+## Distribution updates - 2026-11-13
+
+- Historical 1.0.0, 1.0.4, 1.0.7, and 1.0.10 archives are available from
+  their matching GitHub Releases. The original ZIP bytes and checksums are
+  preserved; new releases do not commit binary archives to Git.
+
 ## 1.0.10 - 2026-11-09
 
 - Updates the Windows x64 native runtime to MeshStream SDK 1.0.10.

@@ -15,4 +15,3 @@ CMakeCache.txt
 *.pdb
 *.exe
 *.zip
-!releases/*.zip

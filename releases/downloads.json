@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk",
+  "entries": [
+    {
+      "version": "1.0.0",
+      "tag": "1.0.0",
+      "sourceRevision": "86e2406a942d262534ee158331f9438de61e76c4",
+      "archivePath": "releases/MeshStream-Windows-SDK-1.0.0-win-x64.zip",
+      "archiveUrl": "https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.0/MeshStream-Windows-SDK-1.0.0-win-x64.zip",
+      "archiveSha256": "f566e4286bb980a225e5149c42085ec45a232d907c371a6d501e73e87c3fedea",
+      "archiveSizeBytes": 2049083
+    },
+    {
+      "version": "1.0.4",
+      "tag": "1.0.4",
+      "sourceRevision": "a9f3518550e71c63f5c320d1e024b9be31ca1ef8",
+      "archivePath": "releases/MeshStream-Windows-SDK-1.0.4-win-x64.zip",
+      "archiveUrl": "https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.4/MeshStream-Windows-SDK-1.0.4-win-x64.zip",
+      "archiveSha256": "a9b0ee941af580eedcce7511c46b7ce9144cc0703799be23639cb7ff5723acbe",
+      "archiveSizeBytes": 2005457
+    },
+    {
+      "version": "1.0.7",
+      "tag": "1.0.7",
+      "sourceRevision": "501a237c6262818418b1bf18abeeb5ca41abce61",
+      "archivePath": "releases/MeshStream-Windows-SDK-1.0.7-win-x64.zip",
+      "archiveUrl": "https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.7/MeshStream-Windows-SDK-1.0.7-win-x64.zip",
+      "archiveSha256": "edf495061262bce9c506e8890b002ab02aad3f850b65544d61691225a5f9b61b",
+      "archiveSizeBytes": 2009485
+    },
+    {
+      "version": "1.0.10",
+      "tag": "1.0.10",
+      "sourceRevision": "f3e3268a75b87a65c11c8f77ab94ba2cf2e6f1b2",
+      "archivePath": "releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip",
+      "archiveUrl": "https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.10/MeshStream-Windows-SDK-1.0.10-win-x64.zip",
+      "archiveSha256": "0fc0d33c2f81c08b58a0aeffd46a726db13f38a35377c11a0f8c46f8332ab3f4",
+      "archiveSizeBytes": 2010209
+    }
+  ]
+}

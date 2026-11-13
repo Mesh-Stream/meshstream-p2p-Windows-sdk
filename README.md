@@ -1,6 +1,6 @@
 # MeshStream P2P Windows SDK
 
-[简体中文](README.zh-CN.md) · [Website](https://meshstream.net/) · [Documentation](https://meshstream.net/docs/sdk/windows-setup/) · [SDK downloads](releases/) · [Live demo](https://demo.meshstream.net/)
+[简体中文](README.zh-CN.md) · [Website](https://meshstream.net/) · [Documentation](https://meshstream.net/docs/sdk/windows-setup/) · [SDK downloads](releases/downloads.json) · [Live demo](https://demo.meshstream.net/)
 
 MeshStream Windows SDK provides a C / C++ API for P2P video and audio delivery in Windows 10 / 11 x64 desktop apps. It proxies HLS, MPEG-DASH and eligible HTTP Range MP4/MP3 requests through a local playback URL, with HTTP/CDN fallback for your existing media player.
 
@@ -39,16 +39,15 @@ The current release is **1.0.10**.
 | Platform | Windows 10 / 11 x64 |
 | Public API | C / C++ through `meshstream.h` |
 | Runtime | Microsoft Visual C++ 2015-2022 Redistributable (x64) |
-| Distribution | Versioned archive in this repository |
+| Distribution | GitHub Release attachment |
 
 Windows ARM64 and x86 are not part of the current published release. Do not
 ship the x64 SDK runtime on those architectures.
 
 ## Package contents
 
-The versioned release archive is committed at
-[`releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip`](releases/MeshStream-Windows-SDK-1.0.10-win-x64.zip)
-and contains:
+Download the [1.0.10 Windows x64 release archive](https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.10/MeshStream-Windows-SDK-1.0.10-win-x64.zip).
+The archive contains:
 
 ```text
 include/meshstream.h

@@ -56,7 +56,10 @@ repository's README and changelog.
 ### Windows
 
 - Build the DLL, import library, and public header as one versioned package.
-- Update the committed release archive and `releases/<version>.json` checksums.
+- Upload the versioned ZIP as an attachment to the matching GitHub Release and
+  update `releases/<version>.json` with its public URL, checksum, and size.
+- Keep release ZIPs out of Git; use `releases/downloads.json` for historical
+  archive-path-to-Release URL mappings.
 - Build `Examples/ConsoleDemo` using the packaged SDK, not files from the main
   development repository.
 
