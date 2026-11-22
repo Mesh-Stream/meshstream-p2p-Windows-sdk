@@ -37,6 +37,14 @@
       "archiveUrl": "https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.10/MeshStream-Windows-SDK-1.0.10-win-x64.zip",
       "archiveSha256": "0fc0d33c2f81c08b58a0aeffd46a726db13f38a35377c11a0f8c46f8332ab3f4",
       "archiveSizeBytes": 2010209
+    },
+    {
+      "version": "1.1.2",
+      "tag": "1.1.2",
+      "sourceRevision": "01477d1ef866f679b7520c3f2bc0108a939df6ad",
+      "archiveUrl": "https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.1.2/MeshStream-Windows-SDK-1.1.2-win-x64.zip",
+      "archiveSha256": "f0f854b40d3b2758cd7b971c4c06fb7e1255692f70ef4c810b989c2fd24fe8cf",
+      "archiveSizeBytes": 2043459
     }
   ]
 }

@@ -9,6 +9,11 @@ documented in this file.
   their matching GitHub Releases. The original ZIP bytes and checksums are
   preserved; new releases do not commit binary archives to Git.
 
+## 1.1.2 - 2026-11-22
+
+- Rebuilds the Windows x64 SDK from P2PCDN native 1.1.2 without changing the public C header.
+- Verifies the DLL version, x64 exports, archive checksum, and packaged ConsoleDemo build.
+
 ## 1.0.10 - 2026-11-09
 
 - Updates the Windows x64 native runtime to MeshStream SDK 1.0.10.

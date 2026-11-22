@@ -32,12 +32,12 @@ MeshStream Windows SDK 面向 Windows 10 / 11 x64 桌面应用，通过 C / C++ 
 
 ## 当前发布
 
-当前版本为 `1.0.10`，支持 Windows 10/11 x64，使用 C/C++ 公共头文件
+当前版本为 `1.1.2`，支持 Windows 10/11 x64，使用 C/C++ 公共头文件
 `meshstream.h`。请安装 Microsoft Visual C++ 2015-2022 Redistributable（x64）。
 
 ## 安装
 
-从 [GitHub Release 下载 MeshStream-Windows-SDK-1.0.10-win-x64.zip](https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.10/MeshStream-Windows-SDK-1.0.10-win-x64.zip) 并解压，包内包含：
+从 [GitHub Release 下载 MeshStream-Windows-SDK-1.1.2-win-x64.zip](https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.1.2/MeshStream-Windows-SDK-1.1.2-win-x64.zip) 并解压，包内包含：
 
 ```text
 include/meshstream.h
@@ -97,7 +97,7 @@ meshstream_client_destroy(client);
 ```powershell
 git clone https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk.git
 cd meshstream-p2p-Windows-sdk/Examples/ConsoleDemo
-cmake -S . -B out -DMESHSTREAM_SDK_ROOT="C:/SDKs/MeshStream-Windows-SDK-1.0.10-win-x64"
+cmake -S . -B out -DMESHSTREAM_SDK_ROOT="C:/SDKs/MeshStream-Windows-SDK-1.1.2-win-x64"
 cmake --build out --config Release
 .\out\Release\MeshStreamConsoleDemo.exe "your_sdk_key" "https://cdn.example.com/master.m3u8" "stable-content-id"
 ```

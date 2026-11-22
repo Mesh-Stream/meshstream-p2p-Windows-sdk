@@ -32,7 +32,7 @@ To try it first, jump to [Run the demo](#run-the-demo). The online demo linked a
 
 ## Release
 
-The current release is **1.0.10**.
+The current release is **1.1.2**.
 
 | Item | Value |
 | --- | --- |
@@ -46,7 +46,7 @@ ship the x64 SDK runtime on those architectures.
 
 ## Package contents
 
-Download the [1.0.10 Windows x64 release archive](https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.0.10/MeshStream-Windows-SDK-1.0.10-win-x64.zip).
+Download the [1.1.2 Windows x64 release archive](https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk/releases/download/1.1.2/MeshStream-Windows-SDK-1.1.2-win-x64.zip).
 The archive contains:
 
 ```text
@@ -115,7 +115,7 @@ Use Visual Studio 2022 with C++ desktop tools and CMake 3.21+. Run in PowerShell
 ```powershell
 git clone https://github.com/Mesh-Stream/meshstream-p2p-Windows-sdk.git
 cd meshstream-p2p-Windows-sdk/Examples/ConsoleDemo
-cmake -S . -B out -DMESHSTREAM_SDK_ROOT="C:/SDKs/MeshStream-Windows-SDK-1.0.10-win-x64"
+cmake -S . -B out -DMESHSTREAM_SDK_ROOT="C:/SDKs/MeshStream-Windows-SDK-1.1.2-win-x64"
 cmake --build out --config Release
 .\out\Release\MeshStreamConsoleDemo.exe "your_sdk_key" "https://cdn.example.com/master.m3u8" "stable-content-id"
 ```
